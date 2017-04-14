@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="7"
+    timestamp="18512532659501"
+    token="5655401160655995906" >
+
+    <task
+        name="javac"
+        duration="354" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="12" />
+    <task
+        name="verifier"
+        duration="2" />
+
+    <artifact
+        location="C:\Users\KabirSingh\Documents\GitHub\android-ocr\OCRTest\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+        type="DEX" />
+
+    <build timestamp="15641233113537" >
+        <artifact
+            location="C:\Users\KabirSingh\Documents\GitHub\android-ocr\OCRTest\build\outputs\apk\OCRTest-debug.apk"
+            type="MAIN" />
+    </build>
+    <build timestamp="18512532659501" >
+        <artifact
+            location="C:\Users\KabirSingh\Documents\GitHub\android-ocr\OCRTest\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>
