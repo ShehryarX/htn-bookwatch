@@ -1,20 +1,3 @@
-/*
- * Copyright (C) 2008 ZXing authors
- * Copyright 2011 Robert Theis
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package edu.sfsu.cs.orange.ocr.camera;
 
 import android.content.Context;
@@ -41,12 +24,12 @@ import java.io.IOException;
 public final class CameraManager {
 
   private static final String TAG = CameraManager.class.getSimpleName();
-  
+
   private static final int MIN_FRAME_WIDTH = 50; // originally 240
   private static final int MIN_FRAME_HEIGHT = 20; // originally 240
   private static final int MAX_FRAME_WIDTH = 800; // originally 480
   private static final int MAX_FRAME_HEIGHT = 600; // originally 360
-  
+
   private final Context context;
   private final CameraConfigurationManager configManager;
   private Camera camera;
@@ -96,7 +79,7 @@ public final class CameraManager {
       }
     }
     configManager.setDesiredCameraParameters(theCamera);
-    
+
     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
     reverseImage = prefs.getBoolean(PreferencesActivity.KEY_REVERSE_IMAGE, false);
   }
@@ -158,7 +141,7 @@ public final class CameraManager {
       theCamera.setOneShotPreviewCallback(previewCallback);
     }
   }
-  
+
   /**
    * Asks the camera hardware to perform an autofocus.
    * @param delay Time delay to send with the request
@@ -166,7 +149,7 @@ public final class CameraManager {
   public synchronized void requestAutoFocus(long delay) {
   	autoFocusManager.start(delay);
   }
-  
+
   /**
    * Calculates the framing rect which the UI should draw to show the user where to place the
    * barcode. This target helps with alignment as well as forces the user to hold the device
@@ -227,7 +210,7 @@ public final class CameraManager {
 
   /**
    * Changes the size of the framing rect.
-   * 
+   *
    * @param deltaWidth Number of pixels to adjust the width
    * @param deltaHeight Number of pixels to adjust the height
    */

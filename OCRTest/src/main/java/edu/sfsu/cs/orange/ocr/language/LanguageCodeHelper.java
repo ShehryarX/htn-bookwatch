@@ -1,18 +1,3 @@
-/*
- * Copyright 2011 Robert Theis
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package edu.sfsu.cs.orange.ocr.language;
 
 import android.content.Context;
@@ -37,14 +22,14 @@ public class LanguageCodeHelper {
 
 	/**
 	 * Map an ISO 639-3 language code to an ISO 639-1 language code.
-	 * 
+	 *
 	 * There is one entry here for each language recognized by the OCR engine.
-	 * 
+	 *
 	 * @param languageCode
 	 *            ISO 639-3 language code
 	 * @return ISO 639-1 language code
 	 */
-	public static String mapLanguageCode(String languageCode) {	  
+	public static String mapLanguageCode(String languageCode) {
 	  if (languageCode.equals("afr")) { // Afrikaans
 	    return "af";
 	  } else if (languageCode.equals("sqi")) { // Albanian
@@ -163,7 +148,7 @@ public class LanguageCodeHelper {
 	/**
 	 * Map the given ISO 639-3 language code to a name of a language, for example,
 	 * "Spanish"
-	 * 
+	 *
 	 * @param context
 	 *            interface to calling application environment. Needed to access
 	 *            values from strings.xml.
@@ -186,16 +171,16 @@ public class LanguageCodeHelper {
 				return languageNames[len];
 			}
 		}
-		
+
 		Log.d(TAG, "languageCode: Could not find language name for ISO 693-3: "
 				+ languageCode);
 		return languageCode;
 	}
-	
+
 	/**
    * Map the given ISO 639-1 language code to a name of a language, for example,
    * "Spanish"
-	 * 
+	 *
 	 * @param languageCode
 	 *             ISO 639-1 language code
 	 * @return name of the language. For example, "English"
@@ -214,8 +199,8 @@ public class LanguageCodeHelper {
         return languageNames[len];
       }
     }
-    
-    // Now look in the Microsoft Translate API list. Currently this will only be needed for 
+
+    // Now look in the Microsoft Translate API list. Currently this will only be needed for
     // Haitian Creole.
     language6391 = res.getStringArray(R.array.translationtargetiso6391_microsoft);
     languageNames = res.getStringArray(R.array.translationtargetlanguagenames_microsoft);
@@ -224,9 +209,9 @@ public class LanguageCodeHelper {
         Log.d(TAG, "languageCode: " + languageCode + "->" + languageNames[len]);
         return languageNames[len];
       }
-    }    
-    
-    Log.d(TAG, "getTranslationLanguageName: Could not find language name for ISO 693-1: " + 
+    }
+
+    Log.d(TAG, "getTranslationLanguageName: Could not find language name for ISO 693-1: " +
             languageCode);
     return "";
 	}

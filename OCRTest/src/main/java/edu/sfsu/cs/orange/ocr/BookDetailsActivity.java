@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-/**
- * Created by mark on 18/09/16.
- */
 public class BookDetailsActivity extends AppCompatActivity {
     private Book book;
     private TextView titleText;

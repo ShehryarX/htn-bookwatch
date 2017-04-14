@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2008 ZXing authors
- * Copyright 2011 Robert Theis
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package edu.sfsu.cs.orange.ocr;
 
 import java.util.List;
@@ -110,7 +94,7 @@ public final class ViewfinderView extends View {
       return;
     }
     int width = canvas.getWidth();
-    int height = canvas.getHeight(); 
+    int height = canvas.getHeight();
 
     // Draw the exterior (i.e. outside the framing rect) darkened
     paint.setColor(maskColor);
@@ -140,10 +124,10 @@ public final class ViewfinderView extends View {
             paint.setStrokeWidth(1);
             rect = regionBoundingBoxes.get(i);
             canvas.drawRect(frame.left + rect.left * scaleX,
-                frame.top + rect.top * scaleY, 
-                frame.left + rect.right * scaleX, 
+                frame.top + rect.top * scaleY,
+                frame.left + rect.right * scaleX,
                 frame.top + rect.bottom * scaleY, paint);
-          }      
+          }
         }
 
         if (DRAW_TEXTLINE_BOXES) {
@@ -156,8 +140,8 @@ public final class ViewfinderView extends View {
           for (int i = 0; i < textlineBoundingBoxes.size(); i++) {
             rect = textlineBoundingBoxes.get(i);
             canvas.drawRect(frame.left + rect.left * scaleX,
-                frame.top + rect.top * scaleY, 
-                frame.left + rect.right * scaleX, 
+                frame.top + rect.top * scaleY,
+                frame.left + rect.right * scaleX,
                 frame.top + rect.bottom * scaleY, paint);
           }
         }
@@ -171,10 +155,10 @@ public final class ViewfinderView extends View {
           for (int i = 0; i < stripBoundingBoxes.size(); i++) {
             rect = stripBoundingBoxes.get(i);
             canvas.drawRect(frame.left + rect.left * scaleX,
-                frame.top + rect.top * scaleY, 
-                frame.left + rect.right * scaleX, 
+                frame.top + rect.top * scaleY,
+                frame.left + rect.right * scaleX,
                 frame.top + rect.bottom * scaleY, paint);
-          }        	
+          }
         }
 
         if (DRAW_WORD_BOXES || DRAW_WORD_TEXT) {
@@ -197,15 +181,15 @@ public final class ViewfinderView extends View {
             rect = wordBoundingBoxes.get(i);
             canvas.drawRect(
                 frame.left + rect.left * scaleX,
-                frame.top + rect.top * scaleY, 
-                frame.left + rect.right * scaleX, 
+                frame.top + rect.top * scaleY,
+                frame.left + rect.right * scaleX,
                 frame.top + rect.bottom * scaleY, paint);
           }
-        }  
+        }
 
-        if (DRAW_WORD_TEXT) { 
+        if (DRAW_WORD_TEXT) {
           words = resultText.getText().replace("\n"," ").split(" ");
-          int[] wordConfidences = resultText.getWordConfidences();          
+          int[] wordConfidences = resultText.getWordConfidences();
           for (int i = 0; i < wordBoundingBoxes.size(); i++) {
             boolean isWordBlank = true;
             try {
@@ -229,8 +213,8 @@ public final class ViewfinderView extends View {
                 paint.setAlpha(255);
               }
               canvas.drawRect(frame.left + rect.left * scaleX,
-                  frame.top + rect.top * scaleY, 
-                  frame.left + rect.right * scaleX, 
+                  frame.top + rect.top * scaleY,
+                  frame.left + rect.right * scaleX,
                   frame.top + rect.bottom * scaleY, paint);
 
               // Draw the word in black text
@@ -269,7 +253,7 @@ public final class ViewfinderView extends View {
             }
 
           }
-        }  
+        }
 
 //        if (DRAW_CHARACTER_BOXES || DRAW_CHARACTER_TEXT) {
 //          characterBoundingBoxes = resultText.getCharacterBoundingBoxes();
@@ -284,8 +268,8 @@ public final class ViewfinderView extends View {
 //          for (int c = 0; c < characterBoundingBoxes.size(); c++) {
 //            Rect characterRect = characterBoundingBoxes.get(c);
 //            canvas.drawRect(frame.left + characterRect.left * scaleX,
-//                frame.top + characterRect.top * scaleY, 
-//                frame.left + characterRect.right * scaleX, 
+//                frame.top + characterRect.top * scaleY,
+//                frame.left + characterRect.right * scaleX,
 //                frame.top + characterRect.bottom * scaleY, paint);
 //          }
 //        }
@@ -301,8 +285,8 @@ public final class ViewfinderView extends View {
 //            paint.setAlpha(meanConfidence * (255 / 100));
 //            paint.setStyle(Style.FILL);
 //            canvas.drawRect(frame.left + r.left * scaleX,
-//                frame.top + r.top * scaleY, 
-//                frame.left + r.right * scaleX, 
+//                frame.top + r.top * scaleY,
+//                frame.left + r.right * scaleX,
 //                frame.top + r.bottom * scaleY, paint);
 //
 //            // Draw each letter, in black
@@ -335,7 +319,7 @@ public final class ViewfinderView extends View {
 //                paint.setTextSize(size);
 //
 //                // Draw the text as is. We don't really need to set the text scale, because the dimensions
-//                // of the Rect should already be suited for drawing our letter. 
+//                // of the Rect should already be suited for drawing our letter.
 //                canvas.drawText(letter, frame.left + r.left * scaleX, frame.top + r.bottom * scaleY, paint);
 //              }
 //            } catch (StringIndexOutOfBoundsException e) {
@@ -366,7 +350,7 @@ public final class ViewfinderView extends View {
     canvas.drawRect(frame.left - 15, frame.bottom, frame.left + 15, frame.bottom + 15, paint);
     canvas.drawRect(frame.left - 15, frame.bottom - 15, frame.left, frame.bottom, paint);
     canvas.drawRect(frame.right - 15, frame.bottom, frame.right + 15, frame.bottom + 15, paint);
-    canvas.drawRect(frame.right, frame.bottom - 15, frame.right + 15, frame.bottom + 15, paint);  
+    canvas.drawRect(frame.right, frame.bottom - 15, frame.right + 15, frame.bottom + 15, paint);
 
 
     // Request another update at the animation interval, but don't repaint the entire viewfinder mask.
@@ -379,11 +363,11 @@ public final class ViewfinderView extends View {
 
   /**
    * Adds the given OCR results for drawing to the view.
-   * 
+   *
    * @param text Object containing OCR-derived text and corresponding data.
    */
   public void addResultText(OcrResultText text) {
-    resultText = text; 
+    resultText = text;
   }
 
   /**

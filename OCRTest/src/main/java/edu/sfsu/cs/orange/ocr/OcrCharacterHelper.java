@@ -1,18 +1,3 @@
-/*
- * Copyright 2011 Robert Theis
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package edu.sfsu.cs.orange.ocr;
 
 import android.content.SharedPreferences;
@@ -131,13 +116,13 @@ public class OcrCharacterHelper {
   public static final String KEY_CHARACTER_WHITELIST_THAI = "preference_character_whitelist_thai";
   public static final String KEY_CHARACTER_WHITELIST_TURKISH = "preference_character_whitelist_turkish";
   public static final String KEY_CHARACTER_WHITELIST_UKRAINIAN = "preference_character_whitelist_ukrainian";
-  public static final String KEY_CHARACTER_WHITELIST_VIETNAMESE = "preference_character_whitelist_vietnamese";  
-  
+  public static final String KEY_CHARACTER_WHITELIST_VIETNAMESE = "preference_character_whitelist_vietnamese";
+
   private OcrCharacterHelper() {} // Private constructor to enforce noninstantiability
-  
+
   public static String getDefaultBlacklist(String languageCode) {
     //final String DEFAULT_BLACKLIST = "`~|";
-    
+
     if (languageCode.equals("afr")) { return ""; } // Afrikaans
     else if (languageCode.equals("sqi")) { return ""; } // Albanian
     else if (languageCode.equals("ara")) { return ""; } // Arabic
@@ -197,7 +182,7 @@ public class OcrCharacterHelper {
       throw new IllegalArgumentException();
     }
   }
-  
+
   public static String getDefaultWhitelist(String languageCode) {
     if (languageCode.equals("afr")) { return ""; } // Afrikaans
     else if (languageCode.equals("sqi")) { return ""; } // Albanian
@@ -317,9 +302,9 @@ public class OcrCharacterHelper {
     else if (languageCode.equals("vie")) { return prefs.getString(KEY_CHARACTER_BLACKLIST_VIETNAMESE, getDefaultBlacklist(languageCode)); }
     else {
       throw new IllegalArgumentException();
-    }    
+    }
   }
-  
+
   public static String getWhitelist(SharedPreferences prefs, String languageCode) {
     if (languageCode.equals("afr")) { return prefs.getString(KEY_CHARACTER_WHITELIST_AFRIKAANS, getDefaultWhitelist(languageCode)); }
     else if (languageCode.equals("sqi")) { return prefs.getString(KEY_CHARACTER_WHITELIST_ALBANIAN, getDefaultWhitelist(languageCode)); }
@@ -378,9 +363,9 @@ public class OcrCharacterHelper {
     else if (languageCode.equals("vie")) { return prefs.getString(KEY_CHARACTER_WHITELIST_VIETNAMESE, getDefaultWhitelist(languageCode)); }
     else {
       throw new IllegalArgumentException();
-    }        
+    }
   }
-  
+
   public static void setBlacklist(SharedPreferences prefs, String languageCode, String blacklist) {
     if (languageCode.equals("afr")) { prefs.edit().putString(KEY_CHARACTER_BLACKLIST_AFRIKAANS, blacklist).commit(); }
     else if (languageCode.equals("sqi")) { prefs.edit().putString(KEY_CHARACTER_BLACKLIST_ALBANIAN, blacklist).commit(); }
@@ -439,9 +424,9 @@ public class OcrCharacterHelper {
     else if (languageCode.equals("vie")) { prefs.edit().putString(KEY_CHARACTER_BLACKLIST_VIETNAMESE, blacklist).commit(); }
     else {
       throw new IllegalArgumentException();
-    }    
+    }
   }
-  
+
   public static void setWhitelist(SharedPreferences prefs, String languageCode, String whitelist) {
     if (languageCode.equals("afr")) { prefs.edit().putString(KEY_CHARACTER_WHITELIST_AFRIKAANS, whitelist).commit(); }
     else if (languageCode.equals("sqi")) { prefs.edit().putString(KEY_CHARACTER_WHITELIST_ALBANIAN, whitelist).commit(); }
@@ -500,6 +485,6 @@ public class OcrCharacterHelper {
     else if (languageCode.equals("vie")) { prefs.edit().putString(KEY_CHARACTER_WHITELIST_VIETNAMESE, whitelist).commit(); }
     else {
       throw new IllegalArgumentException();
-    }    
+    }
   }
 }

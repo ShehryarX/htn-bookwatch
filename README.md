@@ -9,11 +9,10 @@ Runs the Tesseract OCR engine using Tesseract. Several open source and private p
 
 ## Training data for OCR
 
-A data file is used to identify and translate between various languages. By defauly, English has been included.
+A data file is used to identify and translate between various languages. By default, English has been included.
 
 You can download additional language translations through browsing the Google Code library on its Github page.
 
 ## Installation
 
 To build and run the app, clone this project, open it as an existing project in Android Studio, and click Run.
-
