@@ -18,6 +18,7 @@ You can download additional language translations through browsing the Google Co
 
 To build and run the app, clone this project, open it as an existing project in Android Studio, and click Run.
 
-## Video
+## Screenshots
 
-[![Video](http://img.youtube.com/vi/FOSgiPjGwx4/0.jpg)](http://www.youtube.com/watch?v=FOSgiPjGwx4)
+![Identification in Action](https://i.imgur.com/1rRSxXD.png)
+![Translation in Action](https://i.imgur.com/gR9hcVm.png)
